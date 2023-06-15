@@ -1,0 +1,566 @@
+
+/* productListStyle */
+.container
+{
+}
+.FilterCon
+{
+display: flex;
+justify-content: space-between;
+}
+.Filter{
+margin: 20px;
+}
+.Title
+{
+margin: 20px;
+}
+.FilterText{
+    font-size: 20px;
+    font-weight: 600;
+    margin-right: 20px;
+
+}
+.Select{
+    margin-top: 10px;
+padding: 10px;
+margin-right: 20px;
+}
+.option{
+    
+}
+/* Products page */
+
+
+.wrapper
+{
+padding: 50px;
+display: flex;
+}
+.ImgContainer
+{
+flex: 1;
+}
+.Image
+{
+    width: 100%;
+    height: 90vh;
+    object-fit: cover;
+}
+.InfoContainer
+{
+    flex: 1;
+ padding: 0px 50px;
+}
+.TitleCon
+{
+font-weight: 200;
+}
+.descCon
+{
+margin: 20px 0px;
+}
+.PriceCon{
+font-weight: 100;
+font-size: 40px;
+}
+.FilterContainer
+{
+    width: 50%;
+    margin: 30px 0px  ;
+    display: flex;
+    justify-content: space-between;
+}
+.Filter
+{
+display: flex;
+align-items: center;
+}
+.FiltetTitle
+{
+font-size: 20px;
+font-weight: 200;
+}
+.FilterColor
+{
+width: 20px;
+height: 20px;
+border-radius: 50%;
+cursor: pointer;
+margin: 0px 5px;
+}
+.FilterSize
+{
+margin-left: 10px;
+padding: 5px;
+}
+.red
+{
+    background-color: red;
+}
+.blue
+{
+    background-color: lightblue;
+}.grey
+{
+    background-color: gray;
+}
+
+.AddContainer
+{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.AmountContainer
+{
+    display: flex;
+    align-items: center;
+    font-weight: 700; 
+}
+.Amount
+{
+width: 30px;
+height: 30px;
+border-radius: 10px;
+border: 1px solid teal;
+display: flex;
+cursor: pointer;
+background-color: beige;
+align-items: center;
+justify-content: center;
+margin: 0px 5px;
+
+
+}
+.ProductButton
+{
+padding: 15px;
+border: 3px solid teal;
+cursor: pointer;
+font-weight: 500;
+}
+.ProductButton:hover
+{
+    background-color: wheat;
+}
+.icon
+{
+    cursor: pointer;
+}
+
+/* register */
+
+.Registerlogin
+{
+width: 100vw;
+height: 100vh;
+background-image: url("https://thumbs.dreamstime.com/z/fashion-clothes-concept-female-blouses-t-shirts-dresses-hanger-white-background-blog-website-social-media-158685437.jpg");
+align-items: center;
+display: flex;
+justify-content: center;
+
+}
+.registerConWrapper
+{
+width: 40%;
+padding: 20px;
+background-color: #fff;
+
+}
+.Title
+{
+    font-size: 24px;
+    font-weight: 300;
+
+}
+.RegisterForm
+{
+display: flex;
+flex-wrap: wrap;
+
+}
+.RegisterInput
+{
+    flex: 1;
+    min-width: 40%;
+    margin: 20px 10px 0px 0px;
+    padding: 10px;
+    
+}
+.Agreement
+{
+    font-size: 20px;
+    margin: 20px 0px;
+}
+
+
+.RegisterButton
+{
+    width: 40%;
+    border: none;
+    padding: 15px 20px;
+    color: #fff;
+    cursor: pointer;
+    background-color: rgb(4, 124, 124);
+}
+/* login */
+
+.Login
+{
+width: 100vw;
+height: 100vh;
+background-image: url("https://img.freepik.com/free-photo/blurred-background-clothing-store_1258-82.jpg?w=2000");
+align-items: center;
+display: flex;
+justify-content: center;
+
+}
+.LoginConWrapper
+{
+width: 25%;
+padding: 20px;
+background-color: #fff;
+
+}
+.LoginTitle
+{
+    font-size: 24px;
+    font-weight: 300;
+
+}
+.LoginForm
+{
+display: flex;
+flex-direction: column;
+
+}
+.LoginInput
+{
+    flex: 1;
+    min-width: 40%;
+    margin: 10px 0px ;
+    padding: 10px;
+    
+}
+.LoginButton
+{
+    width: 40%;
+    border: none;
+    padding: 15px 20px;
+    color: #fff;
+    cursor: pointer;
+    background-color: rgb(4, 124, 124);
+
+}
+.LoginCon
+{
+margin: 5px 0px;
+font-size: 12px;
+text-decoration: underline;
+cursor: pointer;
+
+}
+/* CartCon */
+
+.CartCon
+{
+
+}
+.CartWrraper
+{
+padding: 20px;
+}
+.CartTitle
+{
+    font-weight: 300;
+    text-align: center;
+}
+.CartTop
+{
+display: flex;
+align-items: center;
+justify-content:space-between;
+}
+.TopButton
+{
+padding: 10px;
+font-weight: 600;
+cursor: pointer;
+}
+
+.TopText
+{
+
+}
+.TopTextMessage
+{
+    text-decoration: underline;
+    cursor: pointer;
+    margin: 0px 10px;
+}
+
+
+.CartBottom
+{
+    /* bottom */
+display: flex;
+justify-content: space-between;
+}
+.CartBottomInfo
+{
+    /* info */
+flex: 3;
+}
+.CartBottomcon
+{
+    /* product */
+    display: flex;
+    justify-content:space-between;
+    /* border: solid 1px black; */
+
+}
+.ProductDetails
+/* productdetails */
+{
+    flex: 2;
+    display: flex;
+    margin: 10px;
+    
+}
+.CartBottomImg
+{
+    /* image */
+width: 200px;
+
+}
+.CartBottomData
+{
+    /* details */
+padding: 20px;
+display: flex;
+flex-direction: column;
+justify-content:space-around;
+}
+
+.ProductColor
+{
+width: 20px;
+height: 20px;
+border-radius: 50%;
+background-color: black;
+}
+.ProductSize
+{
+
+}
+.CartBottomDetail
+{
+    /* price deatail */
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+.ProductAmountContainer
+{
+display: flex;
+align-items: center;
+margin-bottom: 20px;
+}
+.ProductAmount
+{
+font-size: 24px;
+margin: 5px;
+}
+.ProductPrice
+{
+    font-size: 20px;
+    font-weight: 200;
+
+}
+.Hr
+{
+    background-color: #eee;
+    border: none;
+    height: 3px;
+}
+.CartBottomSummery
+{
+    /* summery */
+flex: 1;
+border: 2px solid lightblue;
+border-radius: 10px;
+padding: 20px;
+height: 70vh;
+}
+.SummaryTitle
+{
+font-weight: 200;
+}
+.SummeryItem
+{
+margin: 30px 0px;
+display: flex;
+justify-content:space-between;
+}
+.bigger
+{
+    font-weight: 500;
+    font-size: 24px;
+}
+.SummeryButton
+{
+
+    width: 100%;
+    padding: 10px;
+    background-color: black; 
+    color: white;  
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 80px;
+}
+.threeDots
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width:380px) {
+    /* login */
+.LoginConWrapper
+{
+    width: 75%;
+}
+/* register */
+.registerConWrapper
+{
+    width: 75%;
+}
+/* productlist */
+.Filter
+{
+    padding: 0px 20px;
+    display: flex;
+    flex-direction: column;
+}
+.FilterText
+{
+    margin-right: 0px;
+}
+.Select
+{
+    margin: 10px 0px;
+}
+/* product page */
+.wrapper
+{
+    padding: 10px;
+    flex-direction: column;
+}
+.Image
+{
+    height: 40vh;
+}
+.InfoContainer
+{
+    padding: 10px;
+}
+.FilterContainer
+{
+    width: 100%;
+}
+.AddContainer
+{
+    width: 100%;
+
+}
+/* cart */
+.CartWrraper
+{
+    padding: 10px;
+}
+.TopText
+{
+    display: none;
+}
+.CartBottom
+{
+    flex-direction: column;
+}
+.CartBottomcon
+{
+    flex-direction: column;
+    border: solid 1px black;
+}
+.ProductAmount
+{
+    margin: 5px 15px;
+}
+.ProductPrice
+{
+    margin-bottom: 20px;
+}
+
+}
+#popup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+  }
+  
+  .popup {
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    text-align: center;
+    font-size: 20px;
+    line-height: 1.5;
+    color: #333333;
+  }
+  
+  .popup::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 20px;
+    height: 20px;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    border-bottom: none;
+    border-right: none;
+    z-index: -1;
+  }
+  
+  .popup::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 25px;
+    height: 25px;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 50%;
+    z-index: -1;
+  }
+  

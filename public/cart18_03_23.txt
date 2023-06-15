@@ -1,0 +1,418 @@
+// import React, { useState } from "react";
+// import "./productListStyle.css";
+// import Navbar from "../components/Navbar";
+// import Annoucement from "../components/Annoucement";
+// import Footer from "../components/Footer";
+// import { Add, Remove } from "@mui/icons-material";
+// import { Link } from "react-router-dom";
+// import { useCart } from "../context/CartProvider";
+// import DeleteIcon from "@mui/icons-material/Delete";
+// import { useEffect } from "react";
+// import { useLoggedIn } from "../context/LoggedProvider";
+// import { useNavigate } from "react-router-dom";
+// import { setDoc,doc,addDoc,collection,getDocs,updateDoc,where } from "firebase/firestore";
+// import {useCookies} from "react-cookie";
+// import { PayPalButtons } from "@paypal/react-paypal-js";
+// import { db } from "./FirebaseConfig";
+// import {v4 as uuid } from 'uuid';
+
+
+// const Cart = () => {
+//   const navigate = useNavigate();
+  
+//   const { signOut } = useLoggedIn();
+
+//   // let { cart, setCart } = useCart(); //רשימת המוצרים
+  
+
+
+//   let {user} = useLoggedIn();
+
+
+//   let userEmail = 'default';
+  
+//   try {
+//     if(user.length > 0) {
+//       // Check type of user
+//       if(typeof user !== 'string') {
+//         user = JSON.stringify(user);
+//       }
+      
+//       let regex = /"email":"([^"]+)"/;
+//       let matchEmail = user.match(regex);
+//       userEmail = matchEmail[1];
+//     }
+//   }
+//   catch{
+//     // pass
+//   }
+
+
+//   let cart = '';
+
+//   if(userEmail === 'default') {
+//     if(localStorage.getItem(`cart-${userEmail}`))
+//       cart = localStorage.getItem(`cart-${userEmail}`);
+//   }
+//   else{
+//     if(localStorage.getItem(`cart-${userEmail}`))
+//         cart = localStorage.getItem(`cart-${userEmail}`); //משווים לקארט
+//         console.log(cart)
+//   }
+
+//   // Update the cart basket's total
+//   // window.onload = function(){
+//   //   calculateTotal();
+//   // }
+  
+  
+
+//   console.log("cart", cart, userEmail);
+ 
+//   useEffect(() => {
+//     try {
+//       if(user.length > 0) {
+//         const regex = /"firstLogin":"([^"]+)"/;
+//         const matchfl = user.match(regex);
+//         let firstlogin = matchfl[1];
+        
+//         if(firstlogin === 'true'){
+//           // Remove user inorder to get the updated one without the first login
+//           localStorage.removeItem(`user`);
+
+//           // Remove the first login from the user
+//           let updatedUser = user.replace(regex, '"firstlogin":"false"');
+          
+//           // Set the new user in the local storage
+//           localStorage.setItem(`user`, updatedUser);
+         
+//           // Reload page
+//           window.location.reload();
+//         }
+//       }
+//     }
+//     catch{
+//       // pass
+//     }
+
+//   },[])
+
+//   useEffect(() => {
+    
+//     if (userEmail) {
+//       const userCart = localStorage.getItem(`cart-${userEmail}`);
+//       if (userCart) {
+//         // setCart(JSON.parse(userCart));
+//         cart = JSON.parse(userCart);
+//         console.log(cart)
+//       }
+//     }
+//   // }, [userEmail, setCart]);
+// }, [userEmail, cart]);
+
+//   useEffect(() => {
+//     if (userEmail) {
+//       console.log('current cart:', cart); // log the current value of the cart
+//       localStorage.setItem(`cart-${userEmail}`, JSON.stringify(cart));
+//       JSON.stringify(cart)
+//       console.log(`cart-${userEmail}`);
+//     }
+//   }, [userEmail, cart]);
+
+//   const removeElement = (index) => {
+//     const newData = cart.filter((_, i) => i !== index);
+//     // setCart(newData);
+//     cart = newData;
+
+//     // If user logged in add to his cart if not add to default
+//     if(user.length > 0) {
+//       // Remove the old cart from local storage
+//       localStorage.removeItem(`cart-${userEmail}`)
+//       console.log`cart-${userEmail}`()
+//       // Create the updated cart
+//       localStorage.setItem(`cart-${userEmail}`, JSON.stringify(newData));
+//     }
+//     else {
+//         // Remove the old cart from local storage
+//         localStorage.removeItem(`cart-default`)
+
+//         // Create the updated cart
+//         localStorage.setItem(`cart-default`, JSON.stringify(newData));
+//     }
+//   };
+
+  
+
+//   function add(id) {
+//     let copyArr = cart.map(x => x);
+    
+//     let cartProductIndex = cart.findIndex((item)=> item.id === id) 
+//     if (cart[cartProductIndex]) {
+//       cart[cartProductIndex].count++;
+//     }
+//     // ++cart[cartProductIndex].count;
+ 
+//     // setCart(copyArr);
+//     cart = copyArr;
+
+//     localStorage.setItem(`cart-${userEmail}`, JSON.stringify(copyArr));
+
+//     console.table(cart)
+
+//     // Update the cart ybasket's total
+//     calculateTotal();
+//   }
+//   // function add(id) {
+//   //   let cartArray;
+//   //   if (Array.isArray(cart)) {
+//   //     cartArray = cart;
+//   //   } else {
+//   //     cartArray = Array.from(cart.split(",")); // convert cart to an array
+//   //   }
+//   //   console.log(cartArray);
+    
+//   //   let copyArr = cartArray.map(x => x); // create a copy of the array
+    
+//   //   let cartProductIndex = cartArray.indexOf(String(id)); // find the index of the id string
+    
+//   //   if (cartProductIndex !== -1) {
+//   //     ++copyArr[cartProductIndex]; // increment the count of the product
+//   //   } else {
+//   //     console.log(`Item with id ${id} not found in cart`);
+//   //     copyArr.push(String(id)); // add the new product to the cart
+//   //   }
+    
+//   //   console.log(copyArr);
+    
+//   //   cart = copyArr;
+//   //   localStorage.setItem(`cart-${userEmail}`, JSON.stringify(copyArr));
+  
+//   //   console.table(cartArray);
+  
+//   //   // Update the cart basket's total
+//   //   calculateTotal();
+//   // }
+  
+  
+// //   function add(id) {
+// //     let cartArray;
+// //     if (Array.isArray(cart)) {
+// //         cartArray = cart;
+// //     } else {
+// //         cartArray = Array.from(cart.split(",")); // convert cart to an array
+// //     }
+// //     console.log(cartArray)
+// //     let copyArr = cartArray.map(x => x); // create a copy of the array
+// //     console.log(copyArr); // output: ["1", "2", "3"]
+// //     let cartProductIndex = cartArray.findIndex((item)=> item.id === id) 
+  
+// //     if (cartProductIndex !== -1 && cartArray[cartProductIndex]) {
+// //       ++cartArray[cartProductIndex].count;
+// //       console.log(cartArray[cartProductIndex].count);
+// //     } else {
+// //       console.log(`Item with id ${id} not found in cart`);
+// //     }    console.log(cartArray[cartProductIndex].count);
+// //     console.log(id);
+// //     cart = copyArr;
+// //     console.log(cart);
+// //     localStorage.setItem(`cart-${userEmail}`, JSON.stringify(copyArr));
+
+// //     console.table(cartArray);
+
+// //     // Update the cart basket's total
+// //     calculateTotal();
+// // }
+
+// function minus(id) {
+//   let copyArr = Array.isArray(cart) ? cart.map(x => x) : [];
+//   let cartProductIndex = -1;
+  
+//   if (Array.isArray(cart)) {
+//     cartProductIndex = cart.findIndex((item) => item.id === id);
+//   }
+  
+//   if (cartProductIndex !== -1 && cart[cartProductIndex].count !== 0) {
+//     --cart[cartProductIndex].count;
+//     cart = copyArr;
+//     localStorage.setItem(`cart-${userEmail}`, JSON.stringify(copyArr));
+//   } else {
+//     cart = copyArr;
+//     console.log(cart);
+//   }
+
+//   // Update the cart basket's total
+//   calculateTotal();
+// }
+
+
+//   // function minus(id) 
+//   // {
+//   //   let copyArr = cart.map(x => x);
+//   //   let cartProductIndex
+//   //   if (Array.isArray(cart)) {
+
+//   //    cartProductIndex = cart.findIndex((item)=> item.id === id);
+//   //   }
+
+//   //   if(cart[cartProductIndex].count !== 0)
+//   //   {
+//   //     --cart[cartProductIndex].count;
+//   //     // setCart(copyArr);
+//   //     cart = copyArr;
+
+//   //     localStorage.setItem(`cart-${userEmail}`, JSON.stringify(copyArr));
+//   //   }
+//   //   else
+//   //   {
+//   //     // setCart(copyArr);
+//   //     cart = copyArr;
+//   //   }
+
+//   //   // Update the cart basket's total
+//   //   calculateTotal();
+//   // }
+  
+//   function calculateTotal() {
+//     if (!Array.isArray(cart)) {
+//       cart = []; // initialize cart as an empty array if it's not already an array
+//     }
+//     let newTotal = cart.reduce(
+//       (previousScore, currentScore)=>previousScore+
+//       currentScore.price*currentScore.count, 0);
+
+//     if(document.getElementById('total-price-1')) {
+//       document.getElementById('total-price-1').innerHTML = newTotal + '$';
+//       document.getElementById('total-price-2').innerHTML = newTotal + '$';
+//     }
+
+//     return newTotal;
+//   }
+
+//   async function onBuyClick(){
+//     if(Object.keys(user).length)
+//     {
+//      // await addDoc(collection(db,"cart"), {...cart,userId:user.email});
+      
+//      const newTotal = calculateTotal();
+//       var today = new Date();
+//       var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+//       var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+//       var dateTime = date+' '+time;
+      
+//       console.log(dateTime)
+
+//       const newDoc =  doc(db,'carts',dateTime); 
+     
+//       await setDoc(newDoc, {...cart,userEmail:userEmail,totalSum:newTotal});
+//       localStorage.removeItem(`cart-${userEmail}`);
+
+//     }
+//     else{
+//       alert("you need to log in to buy clothes");
+//       navigate("/Login");
+//     }
+//   }
+ 
+  
+  
+//   return (
+//     <>
+    
+//       <div className="CartCon">
+//         <Navbar />
+//         <br />
+//         <Annoucement />
+//         <div className="ReturnCon">
+//           <Link className="btn btn-primary" to={"/ProductsPage"}>
+//             {" "}
+//             return
+//           </Link>
+//         </div>
+//         <div className="CartWrraper">
+//           <h1 className="CartTitle"> your bag</h1>
+//           <div className="CartTop">
+//             <Link to={"/"}>
+//               <button className="TopButton">CONTINUE SHOPPING</button>
+//             </Link>
+//             <div className="TopText">
+//               <span className="TopTextMessage">shopping cart</span>
+//             </div>
+//             <Link to={"/Login"}>
+//               <button className="TopButton">CHEACKOUT PAYMENT</button>
+//             </Link>
+//           </div>
+//           <div className="CartBottom">
+//             <div className="CartBottomInfo">
+//             {cart && cart.length > 0 && Array.isArray(JSON.parse(cart)) && JSON.parse(cart).map((item, index) => (
+
+//                 <div className="CartBottomcon">
+//                   <div className="ProductDetails">
+//                     <img
+//                       className="CartBottomImg"
+//                       src={item.img}
+//                       alt=""
+//                     />
+//                     <div className="CartBottomData">
+//                       <span className="ProductName">
+//                         <b>Product: {item.name}</b>
+//                       </span>
+//                       <span className="ProductId">
+//                         <b>ID: {item.id}</b>
+//                       </span>
+//                       <span className="ProductSize">
+//                         <b>Size: {item.select}</b>
+//                       </span>
+//                     </div>
+//                   </div>
+//                   <div className="CartBottomDetail">
+//                     <div className="ProductAmountContainer">
+//                       <Remove className="icon" onClick={() => minus(item.id)} />
+//                       <div className="ProductAmount">{item.count}</div>
+//                       <Add className="icon" onClick={() => add(item.id)} />
+//                     </div>
+//                     <div className="Productanount">
+//                       {item.count * item.price}$
+//                       <div className="Delete" onClick={() => removeElement(index)} >
+//                         <DeleteIcon />
+//                       </div>
+//                     </div>
+//                   </div>
+//                 </div>
+//               ))}
+//               <hr className="Hr" />
+//             </div>
+//             <div className="CartBottomSummery">
+//             <PayPalButtons />
+
+//               <h1 className="SummaryTitle"> ORDER SUMMERY </h1>
+//               <div className="SummeryItem">
+//                 <span className="SummeryItemText">Subtotal</span>
+//                 <span id='total-price-1' className="SummeryItemanount"></span>
+//               </div>
+//               <div className="SummeryItem">
+//                 <span className="SummeryItemText">Estimated shiping</span>
+//                 <span className="SummeryItemanount">$0</span>
+//               </div>
+//               <div className="SummeryItem">
+//                 <span className="SummeryItemText">discont</span>
+//                 <span className="SummeryItemanount">$0</span>
+//               </div>
+//               <div className="SummeryItem">
+//                 <span className="SummeryItemText bigger">total</span>
+//                 <span id='total-price-2' className="SummeryItemanount"></span>
+//               </div>
+
+
+//               {/*<Link to={"/Login"}>
+//                 <button className="SummeryButton">Checkout Now</button>
+//               </Link>*/}
+//                <button onClick={onBuyClick} className="SummeryButton">Checkout Now</button>
+//             </div>
+//           </div>
+//         </div>
+//         <br /> <br /> <br />
+//         <Footer />
+//       </div>
+//     </>
+//   );
+// };

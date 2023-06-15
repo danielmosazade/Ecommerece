@@ -1,0 +1,113 @@
+// return (
+//     <>
+//       <div className="productCon">
+//         <Navbar />
+//         <br />
+//         <Annoucement />
+//         <div className="ReturnCon">
+//           <Link className="btn btn-primary" to={'/'}>
+//             {' '}
+//             return
+//           </Link>
+//         </div>
+//         <div className="wrapper">
+//           <div className="ImgContainer">
+//             <img className="Image" src={currItem.img} alt="" />
+//           </div>
+//           <div className="InfoContainer">
+//             <h1 className="TitleCon">{currItem.title}</h1>
+//             <p className="descCon">{currItem.description}</p>
+//             <span className="PriceCon">{currItem.price}$</span>
+  
+//             <div className="FilterContainer">
+//               <div className="Filter">
+//                 <span className="FilterTitle">Color</span>
+//                 <div className="FilterColors">
+//                   {currItem.colors.map((color) => (
+//                     <div
+//                       key={color}
+//                       className={`FilterColor ${Selected === color ? 'active' : ''}`}
+//                       style={{ backgroundColor: color }}
+//                       onClick={() => setSelected(color)}
+//                     />
+//                   ))}
+//                 </div>
+//               </div>
+//               <div className="Filter">
+//                 <span className="FilterTitle">Size</span>
+//                 <select className="FilterSize" value={Selected} onChange={(e) => setSelected(e.target.value)}>
+//                   {currItem.sizes.map((size) => (
+//                     <option key={size} value={size}>
+//                       {size}
+//                     </option>
+//                   ))}
+//                 </select>
+//               </div>
+//             </div>
+  
+//             <div className="CounterContainer">
+//               <span className="CounterTitle">Quantity</span>
+//               <div className="Counter">
+//                 <button className="CounterBtn" onClick={minus}>
+//                   -
+//                 </button>
+//                 <span className="CounterValue">{counter}</span>
+//                 <button className="CounterBtn" onClick={add}>
+//                   +
+//                 </button>
+//               </div>
+//             </div>
+  
+//             <button className="btn btn-primary" onClick={handleAddToCart}>
+//               ADD TO CART
+//             </button>
+//           </div>
+//         </div>
+//         <Newsletter />
+//         <Footer />
+//       </div>
+//     </>
+//   )
+// } 
+
+// export default ProductsPage;
+
+ // function handleAddToCart(e) {
+    //     e.preventDefault();
+    
+    //     const selected = data.filter((item) => item.id === select)[0];
+    
+    //     let fuoundIndex = cart.findIndex((item)=> item.id === selected.id);
+            
+    //     if(fuoundIndex !== (-1)){
+    //        cart[fuoundIndex].count++;
+    //     }
+    //     else
+    //     {
+    //         let newItem = {...selected};
+    //         newItem.count = counter;
+    //         newItem.select = Selected;
+    
+    //         cart.push(newItem);
+    //         console.log(cart);
+    //     }
+    
+    //     // If user logged in add to his cart if not add to default
+    //     if(Object.keys(user).length) {
+    //         // Remove the old cart from local storage
+    //         localStorage.removeItem(`cart-${userEmail}`)
+    
+    //         // Create the updated cart
+    //         localStorage.setItem(`cart-${userEmail}`, JSON.stringify(cart));
+    //     }
+    //     else {
+    //         // Remove the old cart from local storage
+    //         localStorage.removeItem(`cart-default`)
+    
+    //         // Create the updated cart
+    //         localStorage.setItem(`cart-default`, JSON.stringify(cart));
+    //     }
+    
+    //     setCart(cart);
+    //     navigate('/Cart');
+    // }

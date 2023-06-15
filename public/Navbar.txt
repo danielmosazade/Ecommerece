@@ -1,0 +1,89 @@
+import React from 'react'
+import './style.css'
+import SearchIcon from '@mui/icons-material/Search';
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import { Badge } from '@mui/material';
+import { Link } from 'react-router-dom'
+import { useState } from 'react';
+import { useEffect } from 'react';
+import Search from "../components/Search";
+import { useLoggedIn,SignOut } from '../context/LoggedProvider';
+import { Button } from 'react-scroll';
+import { ConnectingAirportsOutlined } from '@mui/icons-material';
+
+const Navbar = ({ data }) => {
+
+  const [result, setResult] = useState("");
+  // const [filteredData, setFilteredData] = useState([]);
+  const {user, setUser} = useLoggedIn();
+  // console.log(user);
+  // let lowerCaseResult = result.toLowerCase();
+
+  //use isLoggedIn from context and signout if clicked on button
+
+
+  // useEffect(() => {
+  //   setFilteredData(data.filter(e => e.title==lowerCaseResult));
+  // }, [result, data]);
+ 
+  return (
+    <div style={{}} className="container">
+      <div className="Wrapper">
+        <div className="left">
+          <span className="language">en</span>
+          <div className="search-container">
+            <input
+              className="Input"
+              type="text"
+              placeholder="Search"
+              onChange={e => setResult(e.target.value)}
+            />
+
+            <SearchIcon />
+          </div>
+        </div>
+        <div className="center">
+          <h1 className="Logo">NETA</h1>{/*true&&<></>*/}
+        </div>
+        <div className="right">
+          {!localStorage.getItem('user')&&
+          <>
+            <Link to={"/Register"}>
+              <div className="menuitem">REGISTER</div>
+            </Link>
+            <Link to={"/Login"}>
+              <div className="menuitem">SIGN IN</div>
+            </Link>
+          </>
+          }
+          
+            {localStorage.getItem('user') &&
+            <>
+             <Link to={"/Register"}>
+              <div className="menuitem">REGISTER</div>
+            </Link>
+            <Link to={"/Login"}>
+              <div className="menuitem">SIGN IN</div>
+            </Link>
+              {/* <p>hello!</p> */}
+              {/* <button onClick={()=>{LoggedProvider('signOut');}}>Sign out</button> */}
+            </>
+          }
+
+          
+
+          <Link to={"/Cart"}>
+            <div className="menuitem">
+              <Badge badgeContent={1000} color="primary">
+                <ShoppingCartOutlinedIcon color="action" />
+              </Badge>
+            </div>
+          </Link>
+        </div>
+          {/* <Search filteredData={filteredData} /> */}
+      </div>
+    </div>
+  );
+};
+
+export default Navbar;

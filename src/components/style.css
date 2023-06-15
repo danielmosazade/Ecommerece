@@ -1,0 +1,685 @@
+/* navbar */
+.container
+{
+    height: 60px;
+}
+.Wrapper
+{
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.left
+{
+flex: 1;
+display: flex;
+align-items: center;
+}
+.right
+{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content:flex-end ;
+
+}
+.center
+{
+    flex: 1;
+    text-align:center ;
+
+}
+.language
+{
+   font-size: 14px; 
+   cursor: pointer;
+}
+.search-container
+{
+    border: 0.5px solid black;
+    display: flex;
+    align-items: center;
+    margin-left: 25px;
+    padding: 5px;
+}
+.Input{
+border: none ;
+}
+.Logo
+{
+    font-weight: bold;
+    color: teal;
+    text-decoration: none !important; 
+    /* if there are more than one classes on an element make this setting most relevant */
+}
+.menuitem{
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 25px ;
+
+}
+
+
+
+/*  endd Annoucement */
+
+.container2
+{
+    height: 30px;
+    background-color: teal;
+    color:white ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-family: 500px;
+}
+/* //slider */
+.container3
+{
+    margin-top: 20px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    position: relative;
+    background-color: gray;
+    overflow: hidden;
+}
+.Leftarrow
+{
+    width: 50px;
+    height: 50px;
+    background-color: antiquewhite;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left:10px;
+    bottom: 0;
+    cursor: pointer;
+    margin: auto;
+    opacity: 0.5;
+    z-index: 2;
+
+}
+.rightarrow
+{
+    width: 50px;
+    height: 50px;
+    background-color: antiquewhite;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right:10px;
+    bottom: 0;
+    cursor: pointer;
+    margin: auto;
+    opacity: 0.5;
+    z-index: 2;
+}
+.Wrapper2
+{
+    height: 100px;
+    display: flex;
+    transition: all 1.5s ease;
+ 
+}
+.slide
+{
+display: flex;
+align-items: center;
+width: 100vw;
+height: 100vh;
+}
+.imgcon
+{
+    flex: 1px;
+    height: 100%;
+}
+.infocon
+{
+    flex: 1px;
+    padding: 50px;
+
+}
+.Image
+{
+height: 100vh;
+}
+.Title{
+font-size: 70px;
+}
+.desc{
+margin: 50px 0px;
+font-size: 20px;
+font-weight: 500;
+
+}
+.but{
+border-radius: 35px;
+    height: 80px;
+    width: 100px;
+    background-color:rgb(190, 190, 190);
+    cursor: pointer;
+}
+
+
+.but:hover{
+    height:100px;
+    width:120px;
+}
+/* ------------------------------ categories */
+.CategoriesCon
+{
+display: flex;
+padding: 20px;
+justify-content: space-between ;
+}
+/* ------------------------------  item categories */
+
+.styledCon
+{
+flex: 1;
+margin: 3px;
+height: 70vh;
+position: relative;
+}
+.categoriesImg
+{
+    width:100% ;
+    height: 100%;
+    object-fit: cover;
+}
+.InfoCon
+{
+position: absolute;
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+display: flex;
+align-items: center;
+flex-direction: column;
+justify-content: center;
+}
+.CategoriesTitle
+{
+color: aliceblue;
+margin-bottom: 20px;
+}
+.CategoriesBut
+{
+    border-radius: 35px;
+    height: 50px;
+    width: 100px;
+    background-color:lightblue;
+    cursor: pointer;
+}
+.CategoriesBut:hover
+{
+    transform: scale(1.1);
+
+}
+
+/* ProdectsInfo */
+.PopulerProduct
+{
+    display: flex;
+    justify-content: center;
+    color: rgb(49, 156, 156);
+    font-size: large;
+}
+.ProdectsInfo
+{
+padding: 20px;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+}
+/* ProductsDetails */
+
+.ProductsDetailsCon
+{
+    flex: 1;
+    margin: 5px;
+    min-width: 280px;
+    height: 350px;
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(176, 203, 226);
+    position: relative;
+}
+
+
+.Circle
+{
+    width: 200px;
+    /* height: 200px; */
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+
+
+}
+.ProductsDetailsImg
+{
+    height: 75%;
+    z-index: 2;
+}
+.Info
+{
+ opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color:rgba(0,0,0,0.2);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease;
+}
+.Info:hover
+{
+    opacity: 1;
+}
+.icon
+{
+    width: 40px;
+    height: 40px;
+    background-color: aliceblue;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    cursor: pointer;
+    justify-content: center;
+    transition: all 0.5s ease;
+    }
+    .icon:hover
+{
+    background-color: antiquewhite;
+    transform: scale(1.1);
+}
+/* newsletter */
+.NewsletterCon
+{
+    height: 60vh;
+    background-color: wheat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.NewsTitle
+{
+font-size: 70px;
+margin-bottom: 20px;
+}
+.NewsDesc
+{
+font-size: 24px;
+font-weight: 300;
+margin-bottom: 20px;
+}
+.Newsnputcon
+{
+    width: 50%;
+    height: 40px;
+    border-color: white;
+    display: flex;
+    justify-content:space-between;
+    border: 1px solid lightgrey;
+
+}
+.NewsText
+{
+border: none;
+flex: 8;
+padding-left: 120px;
+}
+.NewsBut
+{
+    flex:1;
+    border: none;
+    background-color: turquoise;
+    color: aliceblue;
+    cursor: pointer;
+}
+/* footer */
+
+.FooterCon
+{
+    display: flex;
+}
+.leftFooterCon
+{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 33.33%;
+}
+
+.FooterDesc
+{
+    margin: 20px 0px;
+}
+.SocialContainer
+{
+display: flex;
+}
+.SocialIcon
+{
+width: 40px;
+height: 40px;
+border-radius:  50%;
+margin-right: 25px;
+cursor: pointer;
+}
+
+
+
+.centerFooterCon
+{
+    flex: 1;
+    padding: 20px;
+
+
+}
+.CenterTitle
+{
+margin-bottom: 30px;
+margin-left: 70px;
+}
+.CenterList
+{
+margin: 0;
+padding: 0;
+list-style: none;
+display: flex;
+flex-direction: column;
+flex-wrap: wrap;
+margin-left: 100px;
+cursor: pointer;
+
+/* ask omer */
+}
+
+.CenterListItems
+{
+ width: 50%;
+ margin-bottom: 10px;
+ cursor: pointer;
+}
+
+.rightFooterCon
+{
+    flex: 1;
+    padding: 20px;
+
+}
+
+.RightContactItem
+{
+margin-bottom: 20px;
+display: flex;
+align-items: center;
+
+}
+.Payment
+{
+width: 300px;
+height: 70px;
+border-radius: 25px;
+}
+/* selected categoris */
+.SelectedCategorie
+{
+display: flex;
+flex-wrap: wrap;
+padding: 20px;
+justify-content: space-between ;
+}
+
+.SelectedCategorieIcon
+{
+    flex: 1;
+    flex-wrap: wrap;
+    margin: 5px;
+    min-width: 280px;
+    height: 350px;
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(176, 203, 226);
+    position: relative;
+}
+.ReturnCon
+{
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ReturnBut
+{
+    background-color: aqua;
+    color: black;
+    width: 100px;
+    height: 50px;
+    border-radius: 40px;
+    font-weight: 600;
+    margin-top: 10px;
+    padding: 20px 30px;
+    cursor: pointer;
+}
+
+@media (max-width:380px) {
+    /* navbar */
+    .container {
+        height: 50px;
+     }
+     .Wrapper
+     {
+        padding: 10px 0px
+     }
+     .language
+     {
+        display: none;
+     }
+     .Input
+     {
+        width: 50px;
+     }
+     .Logo
+     {
+        font-size: 24px;
+     }
+     .right
+     {
+        flex: 2;
+        justify-content: center;
+     }
+     .menuitem
+     {
+        font-size: 12px;
+        margin-left: 10px;
+
+     }
+     /* slider */
+
+     .container3
+     {
+        display: none;
+     }
+     /* categories */
+     .CategoriesCon
+     {
+        padding: 0px;
+        flex-direction: column;
+     }
+     .categoriesImg
+     {
+        height: 30vh;
+     }
+     /* newsletter */
+     .NewsDesc
+     {
+        text-align: center;
+     }
+     .Newsnputcon
+     {
+        width: 80%;
+     }
+     /* fotter */
+    .centerFooterCon
+    {
+        display: none;
+    }
+    .FooterCon
+    {
+        flex-direction: column;
+    }
+    .rightFooterCon
+    {
+        background-color: lightgray;
+    }
+    .leftFooterCon
+    {
+        width: 100%;
+    }
+    .container
+    {
+        margin-bottom: 20px;
+    }
+
+
+  } 
+  
+
+  .Delete
+  {
+    margin-top: 10px;
+    cursor: pointer;
+  }
+
+  @media (max-width:800px)
+  {
+/* navbar */
+.container {
+    height: 50px;
+ }
+ .Wrapper
+ {
+    padding: 10px 0px
+ }
+ .language
+ {
+    display: none;
+ }
+ .Input
+ {
+    width: 50px;
+ }
+ .Logo
+ {
+    font-size: 24px;
+ }
+ .right
+ {
+    flex: 2;
+    justify-content: center;
+ }
+ .menuitem
+ {
+    font-size: 12px;
+    margin-left: 10px;
+
+ }
+ /* slider */
+
+ .container3
+ {
+    display: none;
+ }
+ /* categories */
+ .CategoriesCon
+ {
+    padding: 0px;
+    flex-direction: column;
+ }
+ .categoriesImg
+ {
+    height: 30vh;
+ }
+ /* newsletter */
+ .NewsDesc
+ {
+    text-align: center;
+ }
+ .Newsnputcon
+ {
+    width: 80%;
+ }
+ /* fotter */
+.centerFooterCon
+{
+    display: none;
+}
+.FooterCon
+{
+    flex-direction: column;
+}
+.rightFooterCon
+{
+    background-color: lightgray;
+}
+.leftFooterCon
+{
+    width: 100%;
+}
+.name{
+    display: none;
+}
+
+  }
+  .name
+  {
+    margin-top: 10px;
+    margin-right: 100px;
+    color: #1cdde1;
+  }
+
+
+  
+  /* SentEmail */
+
+  .SentEmail
+{
+width: 100vw;
+height: 100vh;
+background-image: url("https://t3.ftcdn.net/jpg/02/98/10/56/240_F_298105697_1fO8EdLqd8dnsAKVZUGCMaBG8WOaPNvH.jpg");
+align-items: center;
+display: flex;
+justify-content: center;
+
+}
+.EmailConWrapper
+{
+width: 50%;
+padding: 20px;
+background-color: #094b65;
+color: antiquewhite;
+
+}
